@@ -44,3 +44,8 @@ PROJECT LEAD:
 ```
     python main.py
 ```
+
+
+## REFERENCES:
+https://www.occupop.com/blog/how-to-use-chatgpt-in-recruitment-10-sample-use-cases
+https://smart-hire.ai/
