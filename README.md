@@ -19,15 +19,15 @@ System offering rating based on the several questions asked during and interciew
 
 ## TEAM: 
 PROJECT LEAD: 
-- Abdulrahman AlAzwari  github: @azwri, twitter.com/azwri
+- Abdulrahman AlAzwari  github: @azwri, twitter.com/Al_Azwari
 
 ## MEMBERS: 
 - Bart Sakwerda  github: @barts83eu,   twitter.com/bart_arabiya
 - Adel AlRumithah  github: @adelarumithah, twitter.com/adelarumithah
 
 ## PROJECT 
-FILES:  https://github.com/azwri/saudichatgpt/ 
-
+[FILES:]  (https://github.com/azwri/saudichatgpt/ "FILES") 
+[PRESENTATION:] (https://github.com/azwri/saudichatgpt/tree/main/assets/presentation "PRESENTATION")
 
 ## PROJECT RUN INSSTRUCTIONS: 
 
