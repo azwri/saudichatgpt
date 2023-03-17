@@ -1,12 +1,14 @@
 # SAUDI CHAT GPT HACKATHON
-DATE: 
+DATE: 2023-MAR-18
 ORGANIZERS: 
-- TUWAIQ ACADEMY, twitter.com/TuwaiqAcademy
-- KACST KING ABDULLAH UNIVERSITY, twitter.com/KACST_KAU
-- KA CITY FOR SCIENCE AND TECHNOLOGY, twitter.com/KACST_KAU
+* [TUWAIQ ACADEMY] (twitter.com/TuwaiqAcademy)
+* [KACST KING ABDULLAH UNIVERSITY] (twitter.com/KACST_KAU)
+* [KA CITY FOR SCIENCE AND TECHNOLOGY] (twitter.com/KACST_KAU)
+* [VECTARA] (twitter.com/VectaraTech)
+
 
 ## PROJECT NAME:  AUTOMATED ASSESMENT  OF THE CANDIDATES USING CHAT GPT
-Application helping assess candidates for technical tasks during technical interviews. 
+** Application helping assess candidates for technical tasks during technical interviews. **
 
 ## PROBLEM: 
 Assesement of the the candidates is a resource consuming task.  
@@ -14,16 +16,14 @@ Often requires senior members of technical teams to be pulled of their normal jo
 
 ## SOLUTION DESCRIPTION:
 To help times solution utiling deep understanding offered by CHATGPT 3.5 ( and enhanced in advanced version onwards ) to analyze logic and technical skills of the candidate, by evaluatin dialoue with an automated system.
-System offering rating based on the several questions asked during and interciew. 
+System offering rating based on the several questions asked during and interview. 
 
 
 ## TEAM: 
 PROJECT LEAD: 
-- Abdulrahman AlAzwari  github: @azwri, twitter.com/Al_Azwari
-
-## MEMBERS: 
-- Bart Sakwerda  github: @barts83eu,   twitter.com/bart_arabiya
-- Adel AlRumithah  github: @adelarumithah, twitter.com/adelarumithah
+* Abdulrahman AlAzwari  github: @azwri, twitter.com/Al_Azwari
+* Adel AlRumithah  github: @adelarumithah, twitter.com/adelarumithah
+* Bart Sakwerda  github: @barts83eu,   twitter.com/bart_arabiya
 
 ## PROJECT 
 [FILES:] (https://github.com/azwri/saudichatgpt/ "FILES")
@@ -33,14 +33,14 @@ PROJECT LEAD:
 
 ## PROJECT RUN INSSTRUCTIONS: 
 
-- install requirements.txt
+1. install requirements.txt
 ```
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
 ```
 
-- run main.py
+2. run main.py
 ```
     python main.py
 ```
