@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ChatGPTHackathon</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  <div class="progress hide">
+    <div class="indeterminate"></div>
+</div>
+<section id="loading" class="hide">
+<div class="preloader-wrapper big active loader">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+  <section id="loginComponent" class="">
+    <div class="row">
+      <div class="logo"></div>
+      <form class="col s12">
+          <div class="row">
+            <h3 class="center">Login</h3>
+            <div class="input-field col s12">
+              <input placeholder="User Name" id="username" type="text" class="validate">
+              <label for="username">User Name</label>
+              <span class="inputErrorMessage">please enter user name</span>
+            </div>         
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+              <span class="inputErrorMessage">please enter password</span>
+            </div>
+          </div>
+          <div class="row center">
+              <a class="waves-effect waves-light btn">Login <i class="material-icons left">arrow_back</i></a>
+  <p class="error">your data is wrong</p>
+          </div>
+         
+        </form>
+  </div>
+    
+  <script type="JavaScript">
+        $(document).ready(function() {
+           Materialize.updateTextFields();
+           $('textarea').trigger('autoresize');
+        });
+  
+      </script>
+  </section>
+  
+  <section id="HomeComponent" class="hide">
+   <header class="blue  darken-1">
+    <div class="row no-margin-bottom">
+    <div class="col s2 m2 l2">
+      <div class="mainLogo"></div>
+    </div>
+    <div class="col s12 m10 l10">
+      <h4>Assessment Assistance</h4>
+      <a class="logOut"><i class="material-icons left">exit_to_app</i> Logout</a>
+      <span class="welcome">Welcome back Adel !</span>
+    </div>
+  </div>
+   
+   </header>
+   <div class="row continer">
+    
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="#!" class="breadcrumb">Home</a>
+          <a href="#!" class="breadcrumb">Assessment List</a>
+        </div>
+      </div>
+    </nav>
+  
+    <section id="dashbard" class="hide">
+    <a class="waves-effect waves-light btn">Create new Assessment <i class="material-icons left">add</i></a>
+    <div class="row">     
+      <p>You have 3 Assessment</p>
+      <table class="striped">
+        <thead>
+          <tr>
+              <th>Job Title</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="#">Alvin</a></td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td><a href="#">Alan</a></td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td><a href="#">Jonathan</a></td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+
+
+  <section id="assessmentResult" class="hide" >
+   
+    <div class="row">     
+      <h3>Result for Assessment Name here</h3>
+      <table class="striped">
+        <thead>
+          <tr>
+              <th>Person name</th>
+              <th>Score</th>
+              <th>IsRecomened?</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Ali</td>
+            <td>8</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Mohammed</td>
+            <td>5</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Naser</td>
+            <td>10</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+
+  <section id="createAssessment" class="hide">
+   
+    <div class="row">     
+     
+     <div class="row">
+      <form class="col s12">
+        <div class="row">       
+          <h4>Create Assessment</h4>   
+          <div class="input-field col s12 m3 l3">
+            <input placeholder="User Name" id="jobTitle" type="text" class="validate">
+            <label for="jobTitle">Job Title</label>
+            <span class="inputErrorMessage">please enter job title</span>
+          </div>  
+          <div class="input-field col s12 m3 l3">
+            <input placeholder="Number Of Questions" id="questionCount" type="number" class="validate">
+            <label for="questionCount">Number Of Questions</label>
+            <span class="inputErrorMessage">please enter Number Of Questions</span>
+          </div>  
+          <div class="input-field col s12 m3 l3">
+            <input placeholder="Duration Time" id="duration" type="number" class="validate">
+            <label for="duration">Duration Time</label>
+            <span class="inputErrorMessage">please enter duration</span>
+          </div> 
+          <div class="input-field col s12 m3 l3">
+            <input placeholder="Validate Time" id="validateTime" type="number" class="validate">
+            <label for="validateTime">Validate Time</label>
+            <span class="inputErrorMessage">please enter Validate Time</span>
+          </div>  
+          <div class="file-field input-field col s12 m6 l6">            
+              <div class="btn">
+                <span>Employees Excel File</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            <span class="inputErrorMessage">please enter job title</span>
+          </div>       
+        </div>
+       
+        <div class="row center">
+            <a class="waves-effect waves-light btn">Save <i class="material-icons left">save</i></a>
+            <a class="waves-effect waves-light btn">Back <i class="material-icons left">arrow_back</i></a>
+            <p class="error">there is something wrong!</p>
+        </div>
+       
+      </form>
+     </div>
+
+    </div>
+  </section>
+
+
+  <section id="assessmentForm" >
+   
+    <div class="row">     
+     
+     <div class="row">
+      <form class="col s12">
+        <div class="row">       
+          <h4>Assessment Form</h4>   
+          <div class="input-field col s12 m12 l12">
+            <textarea id="textareaQ1" class="materialize-textarea"></textarea>
+            <label for="textareaQ1">Q1: What is the data main on angualr app?</label>
+          </div>  
+          <div class="input-field col s12 m12 l12">
+            <textarea id="textareaQ2" class="materialize-textarea"></textarea>
+            <label for="textareaQ2">Q2: What is the Media queries for common device breakpoints?</label>
+          </div> 
+       
+        <div class="row center">
+            <a class="waves-effect waves-light btn">Save <i class="material-icons left">save</i></a>
+            <a class="waves-effect waves-light btn">Exit <i class="material-icons left">arrow_back</i></a>
+            <p class="error">there is something wrong!</p>
+        </div>
+       
+      </form>
+     </div>
+
+    </div>
+  </section>
+
+   </div>
+   <!-- <footer>
+    <p>Powerd By:</p>
+   </footer> -->
+  </section>
+
+  <app-root></app-root>
+  
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>
