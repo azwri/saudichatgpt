@@ -30,11 +30,15 @@ FILES:  https://github.com/azwri/saudichatgpt/
 
 
 ## PROJECT RUN INSSTRUCTIONS: 
+
 - install requirements.txt
+```
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
-        
-- run main.py
-    python main.py
+```
 
+- run main.py
+```
+    python main.py
+```
