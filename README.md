@@ -26,8 +26,10 @@ PROJECT LEAD:
 - Adel AlRumithah  github: @adelarumithah, twitter.com/adelarumithah
 
 ## PROJECT 
-[FILES:]  (https://github.com/azwri/saudichatgpt/ "FILES") 
-[PRESENTATION:] (https://github.com/azwri/saudichatgpt/tree/main/assets/presentation "PRESENTATION")
+[FILES:] (https://github.com/azwri/saudichatgpt/ "FILES")
+[PRESENTATION PDF:]  (https://1drv.ms/p/s!AlLh7z1jbNlzuRRskVMtlBAlJ8FS?e=3T3QuB "PRESENTATION PDF") 
+[PRESENTATION FILES:]  https://github.com/azwri/saudichatgpt/tree/main/assets/presentation "PRESENTATION DECK")
+ 
 
 ## PROJECT RUN INSSTRUCTIONS: 
 
