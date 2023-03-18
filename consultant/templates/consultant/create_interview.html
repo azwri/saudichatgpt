@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 {% if success %}
@@ -22,6 +22,10 @@
                 {% csrf_token %}
                 <div class="row">
                     <h4>Create Assessment</h4>
+                    <div class="row">
+                        <p>Please download Excel file in the below link to enter applicatnts data before upload it in this form.  <a href="{% static 'consultant/example.xlsx' %}" class="">Download Example Excel File</a></p>
+                        
+                    </div>
                     <div class="input-field col s12 m3 l3">
                         <input placeholder="Job Title" id="title" type="text" class="validate" name="title" required>
                         <label for="jobTitle">Job Title</label>
@@ -41,17 +45,20 @@
                         </div> -->
                     <div class="file-field input-field col s12 m6 l6">
                         <div class="btn">
-                            <span>Employees Excel File</span>
+                            <span>Upload Employees Excel File</span>
                             <input type="file" required name="employees">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
                         </div>
+
+                        
                     </div>
+                   
                 </div>
 
-                <div class="row center">
-                    <button type="submit" class="waves-effect waves-light btn">Save <i
+                <div class="row ">
+                    <button type="submit" class="waves-effect waves-light btn">Submit & Send Emails <i
                             class="material-icons left">save</i></button>
                 </div>
 
