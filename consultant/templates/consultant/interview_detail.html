@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  
+<section id="assessmentResult" class="">
+    
+    <div class="row">
+        <h3>Result for Assessment of {{ interview.title }}</h3>
+        <p>Number of Employees: {{ employees|length }}</p>
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Person name</th>
+                    <th>Finish Test?</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td><a href="{% url 'consultant:employee_detail' employee.id interview.id %}">{{ employee.name }}</a></td>
+                    <td>
+                        {% if  employee.is_finished %}
+                          Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">You have not jobs yet!</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+
+{% endblock content %}

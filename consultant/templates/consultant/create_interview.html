@@ -1,37 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 {% if success %}
-    <p>Interview created successfully!</p>
+<p>Interview created successfully!</p>
 {% endif %}
 
 {% if error %}
-    <p>{{ error }}</p>
+<p>{{ error }}</p>
 {% endif %}
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <p>
-        <label for="id_title">Title:</label>
-        <input type="text" name="title" maxlength="255" id="id_title">
-    </p>
 
-    <p>
-        <label for="id_company">Company:</label>
-        <select name="company" required="" id="id_company">
-            {% for company in companies %}
-                <option value="{{ company.id }}">{{ company.name }}</option>
-              
-            {% endfor %}
-        </select>
-    </p>
 
-    <p>
-        <label for="id_number_of_questions">Number of questions:</label>
-        <input type="number" name="number_of_questions" required="" id="id_number_of_questions">
-    </p>
 
-    <p>
-        <label for="id_employees">Excel file</label>
-        <input type="file" name="employees" required="" id="id_employees">
-    </p>
+<section id="createAssessment" class="">
 
-    <input type="submit" value="Submit">
-</form>
+    <div class="row">
+
+        <div class="row">
+            <form method="post" enctype="multipart/form-data" class="col s12">
+                {% csrf_token %}
+                <div class="row">
+                    <h4>Create Assessment</h4>
+                    <div class="input-field col s12 m3 l3">
+                        <input placeholder="Job Title" id="title" type="text" class="validate" name="title" required>
+                        <label for="jobTitle">Job Title</label>
+                    </div>
+                    <div class="input-field col s12 m3 l3">
+                        <input placeholder="Number Of Questions" id="questionCount" type="number"
+                            name="number_of_questions" required class="validate">
+                        <label for="questionCount">Number Of Questions</label>
+                    </div>
+                    <!-- <div class="input-field col s12 m3 l3">
+                            <input placeholder="Duration Time" id="duration" type="number" class="validate">
+                            <label for="duration">Duration Time</label>
+                        </div> -->
+                    <!-- <div class="input-field col s12 m3 l3">
+                            <input placeholder="Validate Time" id="validateTime" type="number" class="validate">
+                            <label for="validateTime">Validate Time</label>
+                        </div> -->
+                    <div class="file-field input-field col s12 m6 l6">
+                        <div class="btn">
+                            <span>Employees Excel File</span>
+                            <input type="file" required name="employees">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row center">
+                    <button type="submit" class="waves-effect waves-light btn">Save <i
+                            class="material-icons left">save</i></button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

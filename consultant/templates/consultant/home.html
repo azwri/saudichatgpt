@@ -1,2 +1,58 @@
-home
+{% extends "base.html" %}
+
+
+{% for interview in interviews %}
     
+    <p>{{ interview.title }}</p>
+    
+    
+    <p>{{ interview.employees.all|length }}</p>
+
+    {% empty %}
+
+    <p>You have not jobs yet!</p>
+{% endfor %}
+
+
+
+
+
+{% block content %}
+
+
+<section id="dashbard" class="">
+    <a class="waves-effect waves-light btn">Create new Assessment <i class="material-icons left">add</i></a>
+    <div class="row">
+        <p>You have {{ interviews|length }} Assessment</p>
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><a href="#">Alvin</a></td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Alan</a></td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Jonathan</a></td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+{% endblock content %}

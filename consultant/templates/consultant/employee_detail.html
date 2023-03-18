@@ -1,0 +1,50 @@
+
+
+
+
+
+
+{% extends "base.html" %}
+
+{{ questions|length }}
+
+{% block content %}
+
+
+<section id="dashbard" class="">
+    <div class="row">
+        <p>Assessment of {{ employee.name }} for {{ questions.0.interview.title }}</p>
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>question</th>
+                    <th>Answer</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for question in questions %}
+                <tr>
+                    <td>{{ question }}</td>
+                    <td>{{ question.answer }}</td>
+                    <td>{{ question.result }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">You have not jobs yet!</td>
+                </tr>
+                {% endfor %}
+                {% if total_result != 0 %}
+                <tr>
+                    <td colspan="2">Total Result</td>
+                    <td>{{ average_result }}%</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+{% endblock content %}

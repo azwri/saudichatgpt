@@ -1,15 +1,36 @@
+{% extends "base.html" %}
 
-<form method="post">
-    {% csrf_token %}
-    <p>
-        <label for="id_username">Username:</label>
-        <input type="text" name="username" maxlength="150" id="id_username">
-    </p>
 
-    <p>
-        <label for="id_password">Password:</label>
-        <input type="password" name="password" id="id_password">
-    </p>
+{% block content %}
 
-    <input type="submit" value="Submit">
-</form>
+
+<section id="loginComponent" class="">
+    <div class="row">
+        <div class="logo"></div>
+        <form class="col s12" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <h3 class="center">Login</h3>
+                <div class="input-field col s12">
+                    <input placeholder="User Name" id="username" type="text" class="validate" name="username" required>
+                    <label for="username">User Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row center">
+                <button class="waves-effect waves-light btn" type="submit">Login <i class="material-icons left">arrow_back</i></button>
+                {% if error %}
+                    <p class="error">your data is wrong</p>
+                {% endif %}
+            </div>
+
+        </form>
+    </div>
+</section>
+
+{% endblock content %}

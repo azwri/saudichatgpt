@@ -1,13 +1,28 @@
-<p>Inter view questions</p>
-<p>{{ employee }}</p>
+{% extends "base.html" %}
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% for question in questions %}
-        <p>
-            <label for="id_question">{{ question }}</label>
-            <textarea type="text" name="question{{ question.id }}" maxlength="255" id="id_question"></textarea>
-        </p>
-    {% endfor %}
-    <input type="submit" value="Submit">
-</form>    
+
+
+{% block content %}
+
+<section id="assessmentForm" class="">
+    <div class="row">
+        <div class="row">
+            <form class="col s12" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <h4>Assessment Form for {{ employee }}</h4>
+                    {% for question in questions %}
+                    <div class="input-field col s12 m12 l12">
+                        <textarea id="id_question" class="materialize-textarea" required
+                            name="question{{ question.id }}"></textarea>
+                        <label for="id_question">{{ question }}</label>
+                    </div>
+                    {% endfor %}
+                    <div class="row center">
+                        <button type="submit" class="waves-effect waves-light btn">Save <i class="material-icons left">save</i></button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}

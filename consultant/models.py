@@ -13,6 +13,7 @@ class Employee(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=True, blank=True)
     email = models.EmailField(max_length=100, null=True, blank=True)
+    is_finished = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+{% if error %}
+    <p class="error">You don't have permission to access this page</p>
+
+{% else %}
+
+<section id="dashbard" class="">
+    <a href="{% url 'consultant:create_interview' %}" class="waves-effect waves-light btn">Create new Assessment <i class="material-icons left">add</i></a>
+    <div class="row">
+        <p>You have {{ interviews|length }} Assessment</p>
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Count of Employees</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for interview in interviews %}
+                <tr>
+                    <td><a href="{% url 'consultant:interview_detail'  interview.id %}">{{ interview.title }}</a></td>
+                    <td>{{ interview.employees.all|length }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">You have not jobs yet!</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endif %}
+{% endblock content %}

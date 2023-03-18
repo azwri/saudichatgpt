@@ -1,0 +1,89 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Counseling Hub</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'consultant/style.css' %}">
+
+    
+
+</head>
+
+<body>
+    <div class="progress hide">
+        <div class="indeterminate"></div>
+    </div>
+    <section id="loading" class="hide">
+        <div class="preloader-wrapper big active loader">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="JavaScript">
+        $(document).ready(function() {
+           Materialize.updateTextFields();
+           $('textarea').trigger('autoresize');
+        });
+  
+      </script>
+
+      {% if user.is_authenticated %}
+        
+      <section id="HomeComponent" class="">
+          <header class="blue  darken-1">
+              <div class="row no-margin-bottom">
+                  <div class="col s6 m6 l6">
+                        <a href="{% url 'consultant:home' %}" class="mainLogo"></a>
+                        <h4 class="headerTitle">Counseling Hub</h4>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        
+                        <a href="{% url 'users:logout' %}" class="logOut"><i class="material-icons left">exit_to_app</i> Logout</a>
+                        <span class="welcome">Welcome back {{ request.user|upper }}!</span>
+                    </div>
+                </div>
+        </header>
+        <div class="row continer">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <!-- <a href="#!" class="breadcrumb">Home</a> -->
+                        <!-- <a href="#!" class="breadcrumb">Assessment List</a> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    
+    {% endif %}
+    {% block content %}
+
+    {% endblock content %}
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>
